@@ -25,7 +25,7 @@ export class ProductoService {
     }
 
     async create(producto: ProductoEntity): Promise<ProductoEntity> {
-        if (producto.tipo === "Perecedero" || producto.tipo === "No perecedero")
+        if (producto.tipo == "Perecedero" || producto.tipo == "No perecedero")
             return await this.productoRepository.save(producto);
         else
             throw new BusinessLogicException("El tipo de producto que intenta crear no es 'Perecedero' o 'No perecedero'.", BusinessError.PRECONDITION_FAILED);
@@ -36,7 +36,7 @@ export class ProductoService {
         if (!productoAlmacendado)
             throw new BusinessLogicException("No se encontró un producto con el id proporcionado.", BusinessError.NOT_FOUND);
 
-        if (producto.tipo === "Perecedero" || producto.tipo === "No perecedero")
+        if (producto.tipo == "Perecedero" || producto.tipo == "No perecedero")
             return await this.productoRepository.save({ ...productoAlmacendado, ...producto });
         else
             throw new BusinessLogicException("El tipo de producto que intenta actualizar no es 'Perecedero' o 'No perecedero'.", BusinessError.PRECONDITION_FAILED);

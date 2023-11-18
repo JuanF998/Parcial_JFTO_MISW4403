@@ -15,7 +15,7 @@ import { ProductoTiendaModule } from './producto-tienda/producto-tienda.module';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'admin51',
+      password: '',
       database: 'parcial_practico',
       entities: [ProductoEntity, TiendaEntity],
       dropSchema: true,
